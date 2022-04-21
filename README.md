@@ -57,4 +57,4 @@ so by downloading the latest codeql-cli [here](https://github.com/github/codeql-
 and latest queries repository [here](https://github.com/github/codeql).
 
 However, per limitations of this study, the only queries used to collect data
-are categorized as error queries in Python. This list can be found [here](./queries/python/ql/src/q.txt).
+are categorized as error queries in Python. This list can be found at `./queries/python/ql/src/q.txt`.
