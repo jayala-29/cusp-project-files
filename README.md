@@ -1,10 +1,10 @@
-# cusp-project-files
+# cusp-project-files writeup
 
 Before running any scripts, dependencies need to be installed. You can do this
 with `./install-dependencies.sh` to install the necessary requirements.
 
 It is recommended to have a Github token when logging in with `gh auth login`
-which can be done by logging into Github on the browser and navigating [here](https://github.com/settings/tokens)
+which can be done by logging into Github on the browser and navigating [here](https://github.com/settings/tokens).
 
 Scripts that are used for static source code analysis leverage CodeQL and are
 included in `codeql-cli` and `queries` so there is no extra setup required
@@ -43,14 +43,19 @@ would like to speed up static analysis, you can increase the number of threads
 used by modifying the `-j` flag in `run-codeql.sh`, which is currently set to
 6 for an 8-core machine.
 
-Finally, results from specified repos in `repos.txt` can be found in `./rand-results/<repo-name>`,
+Repo metadata results are stored in `./metadata/<repo-name>-data.csv`, randomly
+selected PRs to be analyzed can be found in `./rands/<repo-name>-prnums.txt`,
+and 15 PRs that contain the highest amount of code churn can be found in
+`./topcc-prs/<repo-name>-ccprs.txt`.
+
+Static analysis results from specified repos in `repos.txt` can be found in `./rand-results/<repo-name>`,
 which are from randomly selected PRs, and in `./topcc-prs/<repo-name>`, which
 are from 15 PRs that contain the highest amount of code churn.
 
 If you would like to run the most up-to-date version of these tools, you can do
 so by downloading the latest codeql-cli [here](https://github.com/github/codeql-cli-binaries/releases)
-and latest queries repository [here](https://github.com/github/codeql)
+and latest queries repository [here](https://github.com/github/codeql).
 
 However, per limitations of this study, the only queries used to collect data
 are categorized as error queries in Python. This list can be found in 
-`./queries/python/ql/src/q.txt`
+`./queries/python/ql/src/q.txt`.

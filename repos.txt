@@ -1,0 +1,4 @@
+OctoPrint/OctoPrint
+Ultimaker/Cura
+Klipper3d/klipper
+kubernetes-client/python
