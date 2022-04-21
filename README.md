@@ -41,7 +41,7 @@ and `run-codeql.sh` in that order. No additional arguments are necessary as `ite
 will pass them to the respective collection scripts using `repos.txt`. If you
 would like to speed up static analysis, you can increase the number of threads
 used by modifying the `-j` flag in `run-codeql.sh`, which is currently set to
-6 for an 8-core machine.
+6 for an 8-core machine, on lines 27-28 and 40-41.
 
 Repo metadata results are stored in `./metadata/<repo-name>-data.csv`, randomly
 selected PRs to be analyzed can be found in `./rands/<repo-name>-prnums.txt`,
