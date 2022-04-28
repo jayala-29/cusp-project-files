@@ -3,9 +3,20 @@
 # Usage:   ./collect-metadata.sh <repo-author>/<repo-name> <repo-name>
 # Example: ./collect-metadata.sh Klipper3d/klipper klipper
 
-# get pr nums and store them in txt file -> array
-gh pr list --repo $1 --state merged --limit 10000 > $2-prs.txt
+# get pr nums and store them in txt file
+gh pr list --repo $1 --state merged --limit 10 > $2-prs.txt
 cut -f1 $2-prs.txt > ./pr-nums/$2-pr-nums.txt
+
+# get total number of merged PRs
+lines=$(grep "" -c ./pr-nums/$2-pr-nums.txt)
+if [[ "$lines" -lt 50 ]]; then
+  echo "skipping $1 merged PRs, $lines is not enough to work with (at least 50)"
+  rm $2-prs.txt
+  rm ./pr-nums/$2-pr-nums.txt
+  exit 1
+fi
+
+# store pr nums in array
 i=0
 while read line 
 do
@@ -76,16 +87,9 @@ for num in "${arr[@]}"; do
   i=$((i+1))
 done
 
-# get total number of merged PRs
-lines=$(grep "" -c ./pr-nums/$2-pr-nums.txt)
-#if [[ "$lines" -lt 50 ]]; then
-#  echo "skipping $3 PRs, not enough to work with"
-#  exit 0
-#fi
+# generate random numbers and store them in ./rands/<repo>-rands.txt
 lines=$((lines-1))
 nums=$(($lines / (1 + $lines*225/10000)))
-
-# generate random numbers and store them in ./rands/<repo>-rands.txt
 shuf -i 0-$lines -n $nums > rands/$2-rands.txt
 
 # sort random numbers generated and store actual PR nums in ./rands/<repo>-prnums.txt
