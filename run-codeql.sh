@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Usage:   ./run-codeql.sh <clone-link> <repo-author>/<repo-name> <repo-name>
+# Example: ./run-codeql.sh https://github.com/Klipper3d/klipper.git Klipper3d/klipper klipper
+
 # clone repo into repos directory
 cd repos
 git clone $1

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Usage:   ./collect-metadata.sh <repo-author>/<repo-name> <repo-name>
+# Example: ./collect-metadata.sh Klipper3d/klipper klipper
+
 # get pr nums and store them in txt file -> array
 gh pr list --repo $1 --state merged --limit 10000 > $2-prs.txt
 cut -f1 $2-prs.txt > ./pr-nums/$2-pr-nums.txt
