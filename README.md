@@ -1,7 +1,10 @@
 # cusp-project-files writeup
 
 Before running any scripts, dependencies need to be installed. You can do this
-with `./install-dependencies.sh` to install the necessary requirements.
+with `./root-install-dependencies.sh` or `./no_root-install-dependencies.sh` to 
+install the necessary requirements. In addition, you must some flavor of both
+python2 and python3 for CodeQL to do its work correctly. For data collection
+consistency purposes, we used `python 2.7.18` and `python 3.8.10`.
 
 It is recommended to have a Github token when logging in with `gh auth login`
 which can be done by logging into Github on the browser and navigating [here](https://github.com/settings/tokens).
