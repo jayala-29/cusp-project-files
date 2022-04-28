@@ -4,7 +4,7 @@
 # Example: ./collect-metadata.sh Klipper3d/klipper klipper
 
 # get pr nums and store them in txt file
-gh pr list --repo $1 --state merged --limit 10 > $2-prs.txt
+gh pr list --repo $1 --state merged --limit 10000 > $2-prs.txt
 cut -f1 $2-prs.txt > ./pr-nums/$2-pr-nums.txt
 
 # get total number of merged PRs
