@@ -13,9 +13,4 @@ apt install gh
 apt-get install parallel
 apt install python2
 
-#wget https://github.com/github/codeql-cli-binaries/releases/download/v2.8.5/codeql-linux64.zip - current
-#unzip codeql-linux64.zip
-#mv codeql codeql-cli
-#git clone https://github.com/github/codeql.git queries - 4/19/2022
-
 gh auth login
