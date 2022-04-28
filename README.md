@@ -6,7 +6,7 @@ Otherwise, if you do not have root privileges and do not have `conda` installed,
 run `./dependency-scripts/install-conda.sh` and restart your terminal to get
 `conda` working. Afterwards, run `./dependency-scripts/no_root-install-dependencies.sh`
 to install additional requirements. Furthermore, you must some flavor of both
-python 2.x and python 3.x for CodeQL to do its work correctly.
+python 2.x and python 3.x for CodeQL to work correctly.
 
 Scripts that are used for static source code analysis leverage CodeQL and are
 included in `codeql-cli` and `queries` so there is no extra setup required
