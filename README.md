@@ -9,7 +9,7 @@ to install additional requirements. Furthermore, you must some flavor of both
 python 2.x and python 3.x for CodeQL to work correctly.
 
 Scripts that are used for static source code analysis leveraging CodeQL will be
-available in the `codeql-cli` and `queries` after this step. Included are queries 
+available in `codeql-cli` and `queries` after this step. Included are queries 
 downloaded on 04/19/2022, but you still need to get CodeQL version 2.8.5. To do 
 so, run `./setup-codeql.sh`. It is recommended to have a Github token when 
 prompted via `gh auth login`, which can be done by logging into Github on the 
