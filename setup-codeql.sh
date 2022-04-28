@@ -1,5 +1,8 @@
+# log in to github
+gh auth login
+
 # retrieve used version of CodeQL
-wget https://github.com/github/codeql-cli-binaries/releases/download/v2.8.5/codeql-linux64.zip - current
+wget https://github.com/github/codeql-cli-binaries/releases/download/v2.8.5/codeql-linux64.zip
 unzip codeql-linux64.zip
 mv codeql codeql-cli
 
