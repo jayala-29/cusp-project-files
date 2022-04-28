@@ -12,9 +12,8 @@ Scripts that are used for static source code analysis leverage CodeQL and are
 included in `codeql-cli` and `queries` so there is no extra setup required
 for the scripts to function correctly. Included are queries downloaded on
 04/19/2022, but you still need to get CodeQL version 2.8.5. To do so, run `./setup-codeql.sh`. 
-After this, it is recommended to have a Github token when prompted
-with `gh auth login`, which can be done by logging into Github on the browser 
-and navigating [here](https://github.com/settings/tokens).
+It is recommended to have a Github token when prompted via `gh auth login`, 
+which can be done by logging into Github on the browser and navigating [here](https://github.com/settings/tokens).
 
 Afterwards, the required directory setup can be made with `./setup-dirs.sh`
 which will create the following:
