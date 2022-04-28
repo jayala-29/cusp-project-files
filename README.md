@@ -1,20 +1,20 @@
 # cusp-project-files writeup
 
-Before running any scripts, dependencies need to be installed. You can do this
-with `./root-install-dependencies.sh` or `./no_root-install-dependencies.sh` to 
-install the necessary requirements. In addition, you must some flavor of both
-python2 and python3 for CodeQL to do its work correctly. For data collection
-consistency purposes, we used `python 2.7.18` and `python 3.8.10`.
-
-It is recommended to have a Github token when logging in with `gh auth login`
-which can be done by logging into Github on the browser and navigating [here](https://github.com/settings/tokens).
+Before running any scripts, dependencies need to be installed. If you have root
+privileges, simply run `./dependency-scripts/root-install.dependencies.sh`. 
+Otherwise, if you do not have root privileges and do not have `conda` installed,
+run `./dependency-scripts/install-conda.sh` and restart your terminal to get
+`conda` working. Afterwards, run `./dependency-scripts/no_root-install-dependencies.sh`
+to install additional requirements. Furthermore, you must some flavor of both
+python 2.x and python 3.x for CodeQL to do its work correctly.
 
 Scripts that are used for static source code analysis leverage CodeQL and are
 included in `codeql-cli` and `queries` so there is no extra setup required
 for the scripts to function correctly. Included are queries downloaded on
-04/19/2022 and CodeQL version 2.8.5. Be sure to pull these [files](https://drive.google.com/drive/u/0/folders/1cPSqjKlzzFfeZeT_-LjNTm2LsheBBUYF)
-and unzip them in this directory. After doing so, run `./setup-codeql.sh` to
-get CodeQL working.
+04/19/2022, but you still need to get CodeQL version 2.8.5. To do so, run `./setup-codeql.sh`. 
+After this, it is recommended to have a Github token when prompted
+with `gh auth login`, which can be done by logging into Github on the browser 
+and navigating [here](https://github.com/settings/tokens).
 
 Afterwards, the required directory setup can be made with `./setup-dirs.sh`
 which will create the following:
